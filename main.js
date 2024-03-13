@@ -23,7 +23,12 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 10000;
+// Manejar la solicitud GET a la ruta raíz
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido! Esta es la página principal.');
+});
+
+const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
